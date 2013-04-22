@@ -1,0 +1,23 @@
+{
+    "name": "adamsmeat/javert",
+    "description": "authentication, authorization, oauth package",
+    "authors": [
+        {
+            "name": "Paolo Umali",
+            "email": "dev@paoloumali.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Adamsmeat\\Javert": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
