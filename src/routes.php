@@ -64,35 +64,32 @@ Route::get('javert', function()
 
 Route::get('terms', function()
 {
-    return View::make('page_terms');;
+    return View::make('page.terms');;
 });
 
 Route::get('privacy', function()
 {
-    return View::make('page_privacy');
+    return View::make('page.privacy');
 });
 
 Route::get('about', function()
 {
-    return View::make('page_about');
+    return View::make('page.about');
 });
-
-// register
-Route::get('registration', array('as' => 'registration', 'before' => 'guest', function()
-{
-	$form = Config::get('helpers::form');
-    return View::make('page_registration', compact('form'));
-}));
 
 // user
 Route::get('dashboard', array('as' => 'dashboard', 'before' => 'auth', function()
 {
 	$form = Config::get('helpers::form');
-	$form['attr']['url'] = 'dashboard';
-    return View::make('page_dashboard', compact('form'));
+    return View::make('page.dashboard', compact('form'));
 }));
 
-
+// register
+Route::get('registration', array('as' => 'registration', 'before' => 'guest', function()
+{
+	$form = Config::get('helpers::form');
+    return View::make('page.registration', compact('form'));
+}));
 
 Route::post('registration', function()
 {
@@ -146,8 +143,7 @@ Route::post('registration', function()
 Route::get('login', array('as' => 'login', 'before' => 'guest', function()
 {
 	$form = Config::get('helpers::form');
-	$form['attr']['url'] = 'login';
-    return View::make('page_login', compact('form'));
+    return View::make('page.login', compact('form'));
 }));
 
 Route::post('login', function()
